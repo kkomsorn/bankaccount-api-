@@ -15,6 +15,15 @@ public class BankAccount {
     private int customerId;
     private String type;
     private Double balance;
+    private Double depositOrWithdraw;
+
+    public Double getDepositOrWithdraw() {
+        return depositOrWithdraw;
+    }
+
+    public void setDepositOrWithdraw(Double depositOrWithdraw) {
+        this.depositOrWithdraw = depositOrWithdraw;
+    }
 
     public int getId() {
         return id;
@@ -47,7 +56,9 @@ public class BankAccount {
     public void setBalance(Double balance) {
         this.balance = balance;
     }
-
+    public double depositOrWithdraw(){
+        return balance+=depositOrWithdraw;
+    }
     @Override
     public String toString() {
         return "BankAccount{" +
@@ -55,6 +66,7 @@ public class BankAccount {
                 ", customerId=" + customerId +
                 ", type='" + type + '\'' +
                 ", balance=" + balance +
+                ", depositOrWithdraw=" + depositOrWithdraw +
                 '}';
     }
 }

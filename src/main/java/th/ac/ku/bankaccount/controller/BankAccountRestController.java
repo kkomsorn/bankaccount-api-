@@ -42,7 +42,7 @@ public class BankAccountRestController {
     @PutMapping("/{id}")
     public BankAccount update(@PathVariable int id,@RequestBody BankAccount bankAccount){
         BankAccount record = repository.findById(id).get();
-        record.setBalance(bankAccount.getBalance());
+        record.setBalance(bankAccount.depositOrWithdraw());
         repository.save(record);
         return record;
     }
